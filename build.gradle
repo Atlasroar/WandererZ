@@ -118,10 +118,6 @@ dependencies {
 	modCompileOnly ('maven.modrinth:nameplate:1.1.4+1.20.1') {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
-	// PlayerEx
-	modCompileOnly "maven.modrinth:data-attributes-directors-cut:2.0.0+1.20.1-beta.9-fabric"
-	modCompileOnly "maven.modrinth:playerex-directors-cut:4.0.0+1.20.1-alpha.13"
-
 	// Tiered (merged from Tiered)
 	// Reach Entity Attributes (bundled)
 	modImplementation include ("com.jamieswhiteshirt:reach-entity-attributes:${project.reach_attributes_version}") {
@@ -150,6 +146,10 @@ dependencies {
 	}
 
 	// SpoiledZ (merged from SpoiledZ)
+	// NutritionZ optional drink-event compatibility
+	modCompileOnly ('maven.modrinth:dehydration:1.3.5+1.20.1') {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
 	// Fabric Seasons (optional season provider - provides the season/calendar system SpoiledZ's spoilage timing can use)
 	modCompileOnly modRuntimeOnly ('maven.modrinth:fabric-seasons:2.3+1.20') {
 		exclude(group: "net.fabricmc.fabric-api")
@@ -195,10 +195,50 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
+sourceSets {
+    gametest {
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+}
+
+loom {
+    mods {
+        wandererz {
+            sourceSet sourceSets.main
+        }
+        "wandererz-test" {
+            sourceSet sourceSets.gametest
+        }
+    }
+    runs {
+        gameTest {
+            server()
+            name "Nutrition game tests"
+            source sourceSets.gametest
+            vmArg "-Dfabric-api.gametest"
+            vmArg "-Dfabric-api.gametest.report-file=${project.layout.buildDirectory.file('gametest-results.xml').get().asFile}"
+            runDir "build/gametest"
+        }
+    }
+}
+
+tasks.named("runGameTest") {
+    doFirst {
+        file("build/gametest").mkdirs()
+        file("build/gametest/eula.txt").text = "eula=true\n"
+    }
+}
+
 jar {
     from("LICENSE") {
         rename { "${it}_${project.archivesBaseName}" }
     }
+    from("LICENSE-NutritionZ")
+}
+
+tasks.named("sourcesJar") {
+    from("LICENSE-NutritionZ")
 }
 
 publishing {

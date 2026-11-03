@@ -1,0 +1,12 @@
+{
+  "minerals": {
+    "replace": true,
+    "positive": {
+      "minecraft:haste": {
+        "duration": 200,
+        "amplifier": 1
+      }
+    },
+    "negative": {}
+  }
+}

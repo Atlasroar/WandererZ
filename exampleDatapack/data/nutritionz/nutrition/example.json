@@ -1,0 +1,9 @@
+{
+  "minecraft:apple": {
+    "carbohydrates": 0,
+    "protein": 0,
+    "fat": 0,
+    "vitamins": 15,
+    "minerals": 5
+  }
+}

@@ -1,3 +1,14 @@
+## 2.7.0
+### Added:
+- Integrated NutritionZ's MIT-licensed 1.20 nutrition system: carbohydrates, protein, fat, vitamins, and minerals, with food tooltips, an inventory nutrition screen, configurable thresholds, and datapack-driven food values and effects.
+- Added the Nutrition config screen and an independent `enableNutritionZ` integration toggle. Configuration lives in `config/WandererZ/nutritionz.json5`; existing standalone NutritionZ config files migrate automatically.
+- Included NutritionZ's 55 optional food/drink compatibility packs and optional Dehydration drink-event support, without requiring any new separate dependency.
+### Fixed:
+- Nutrition initializes existing players at neutral values, preserves all five nutrients across saves, and handles attribute changes and datapack reloads without stale or stacked bonuses.
+- Nutrition uses the bundled Capsaicin food events so eating food or cake is counted once alongside the existing spoilage system.
+- Kept client nutrition caches separate from integrated-server data, synchronized server nutrition thresholds, and refreshed tooltips after datapack reloads.
+- Restored clean CI builds with supported runners/artifact uploads and native attribute access for PlayerEx compatibility, eliminating downloads from two removed Modrinth projects.
+
 ## 2.6.0
 ### Changed:
 - All mod config files now live under a dedicated `config/WandererZ/` subfolder instead of being scattered directly in `config/` (e.g. `config/WandererZ/wandererz.json5`, `config/WandererZ/jobsaddon.json5`, etc.) for a cleaner config directory.

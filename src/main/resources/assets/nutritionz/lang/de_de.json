@@ -1,0 +1,29 @@
+{
+    "screen.nutritionz": "Nährstoffe",
+
+    "text.autoconfig.WandererZ/nutritionz.title": "NutritionZ Config",
+    "text.autoconfig.WandererZ/nutritionz.option.maxNutrition": "Max Nährstoffe",
+    "text.autoconfig.WandererZ/nutritionz.option.negativeNutrition": "Negative Nährstoffe",
+    "text.autoconfig.WandererZ/nutritionz.option.positiveNutrition": "Positive Nährstoffe",
+    "text.autoconfig.WandererZ/nutritionz.option.posX": "Pos X",
+    "text.autoconfig.WandererZ/nutritionz.option.posY": "Pos Y",
+    "text.autoconfig.WandererZ/nutritionz.option.carbohydrateItemId": "Kohlenhydrat Item Id",
+    "text.autoconfig.WandererZ/nutritionz.option.proteinItemId": "Protein Item Id",
+    "text.autoconfig.WandererZ/nutritionz.option.fatItemId": "Fett Item Id",
+    "text.autoconfig.WandererZ/nutritionz.option.vitaminItemId": "Vitamin Item Id",
+    "text.autoconfig.WandererZ/nutritionz.option.mineralItemId": "Mineral Item Id",
+
+    "screen.nutritionz.carbohydrates": "Kohlenhydrate",
+    "screen.nutritionz.protein": "Proteine",
+    "screen.nutritionz.fat": "Fett",
+    "screen.nutritionz.vitamins": "Vitamine",
+    "screen.nutritionz.minerals": "Mineralien",
+    "screen.nutritionz.nutritionValue": "%s/%s",
+
+    "item.nutritionz.nutrients": "§7Nährstoffe:",
+    "item.nutritionz.carbohydrates": " %s Kohlenhydrate",
+    "item.nutritionz.protein": " %s Proteine",
+    "item.nutritionz.fat": " %s Fett",
+    "item.nutritionz.vitamins": " %s Vitamine",
+    "item.nutritionz.minerals": " %s Mineralien"
+}

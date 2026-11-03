@@ -16,9 +16,9 @@ import net.minecraft.text.Text;
 import net.partyaddon.config.PartyAddonConfig;
 import net.rpgdifficulty.config.RpgDifficultyConfigScreen;
 import net.spoiledz.config.SpoiledZConfig;
+import net.nutritionz.config.NutritionzConfig;
 import draylar.tiered.config.TieredConfig;
 
-// Provides the mods menu config screen for WandererZ and the merged JobsAddon, RpgDifficulty, Tiered, PartyAddon and SpoiledZ settings.
 @Environment(EnvType.CLIENT)
 public class ModMenuIntegration implements ModMenuApi {
 
@@ -43,7 +43,7 @@ public class ModMenuIntegration implements ModMenuApi {
         @Override
         protected void init() {
             int centerX = this.width / 2;
-            int y = this.height / 2 - 20;
+            int y = this.height / 2 - 94;
 
             this.addDrawableChild(ButtonWidget.builder(Text.translatable("config.wandererz.category.wandererz"),
                     (button) -> this.client.setScreen(AutoConfig.getConfigScreen(WandererzConfig.class, this).get())).dimensions(centerX - 100, y, 200, 20).build());
@@ -63,13 +63,16 @@ public class ModMenuIntegration implements ModMenuApi {
             this.addDrawableChild(ButtonWidget.builder(Text.translatable("config.wandererz.category.spoiledz"),
                     (button) -> this.client.setScreen(AutoConfig.getConfigScreen(SpoiledZConfig.class, this).get())).dimensions(centerX - 100, y + 120, 200, 20).build());
 
-            this.addDrawableChild(ButtonWidget.builder(ScreenTexts.DONE, (button) -> this.client.setScreen(this.parent)).dimensions(centerX - 100, y + 144, 200, 20).build());
+            this.addDrawableChild(ButtonWidget.builder(Text.translatable("config.wandererz.category.nutritionz"),
+                    (button) -> this.client.setScreen(AutoConfig.getConfigScreen(NutritionzConfig.class, this).get())).dimensions(centerX - 100, y + 144, 200, 20).build());
+
+            this.addDrawableChild(ButtonWidget.builder(ScreenTexts.DONE, (button) -> this.client.setScreen(this.parent)).dimensions(centerX - 100, y + 168, 200, 20).build());
         }
 
         @Override
         public void render(DrawContext drawContext, int mouseX, int mouseY, float delta) {
             super.render(drawContext, mouseX, mouseY, delta);
-            drawContext.drawCenteredTextWithShadow(this.textRenderer, this.title, this.width / 2, this.height / 2 - 48, 0xFFFFFF);
+            drawContext.drawCenteredTextWithShadow(this.textRenderer, this.title, this.width / 2, this.height / 2 - 118, 0xFFFFFF);
         }
 
         @Override
