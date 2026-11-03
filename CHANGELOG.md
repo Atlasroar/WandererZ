@@ -7,6 +7,7 @@
 - Nutrition initializes existing players at neutral values, preserves all five nutrients across saves, and handles attribute changes and datapack reloads without stale or stacked bonuses.
 - Nutrition uses the bundled Capsaicin food events so eating food or cake is counted once alongside the existing spoilage system.
 - Kept client nutrition caches separate from integrated-server data, synchronized server nutrition thresholds, and refreshed tooltips after datapack reloads.
+- Restored clean CI builds with supported runners/artifact uploads and native attribute access for PlayerEx compatibility, eliminating downloads from two removed Modrinth projects.
 
 ## 2.6.0
 ### Changed:

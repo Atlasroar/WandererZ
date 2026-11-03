@@ -1,9 +1,10 @@
 package net.rpgdifficulty.mixin.compat;
 
-import com.bibireden.data_attributes.api.DataAttributesAPI;
-import com.bibireden.playerex.api.attribute.PlayerEXAttributes;
+import net.minecraft.registry.Registries;
+import net.minecraft.util.Identifier;
 import net.minecraft.server.world.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -22,6 +23,12 @@ import net.rpgdifficulty.api.MobStrengthener;
 
 @Mixin(MobStrengthener.class)
 public class PlayerExCompatMixin {
+
+    @Unique
+    private static int rpgdifficulty$getPlayerExLevel(PlayerEntity player) {
+        return (int) player.getAttributeValue(Registries.ATTRIBUTE.getOrEmpty(new Identifier("playerex", "level"))
+                .orElseThrow(() -> new IllegalStateException("PlayerEx is loaded but its level attribute is missing")));
+    }
 
     @Inject(method = "changeAttributes", at = @At(value = "HEAD"), cancellable = true)
     private static void changeAttributesMixin(MobEntity mobEntity, World world, CallbackInfo info) {
@@ -46,14 +53,14 @@ public class PlayerExCompatMixin {
                 if (playerEntity.getWorld().getDimension().equals(mobEntity.getWorld().getDimension())
                         && Math.sqrt(playerEntity.squaredDistanceTo(x, y, z)) <= RpgDifficultyMain.CONFIG.playerRadius) {
                     playerCount++;
-                    totalPlayerLevel += DataAttributesAPI.getValue(PlayerEXAttributes.LEVEL, playerEntity).get().intValue();
+                    totalPlayerLevel += rpgdifficulty$getPlayerExLevel(playerEntity);
                 }
             }
             if (playerCount == 0) {
                 PlayerEntity playerEntity = world.getClosestPlayer(x, y, z, -1.0, false);
                 if (playerEntity != null) {
                     playerCount++;
-                    totalPlayerLevel += DataAttributesAPI.getValue(PlayerEXAttributes.LEVEL, playerEntity).get().intValue();
+                    totalPlayerLevel += rpgdifficulty$getPlayerExLevel(playerEntity);
                 }
             }
             if (playerCount > 0) {
@@ -174,14 +181,14 @@ public class PlayerExCompatMixin {
                     if (playerEntity.getWorld().getDimension().equals(mobEntity.getWorld().getDimension())
                             && Math.sqrt(playerEntity.squaredDistanceTo(x, y, z)) <= RpgDifficultyMain.CONFIG.playerRadius) {
                         playerCount++;
-                        totalPlayerLevel += DataAttributesAPI.getValue(PlayerEXAttributes.LEVEL, playerEntity).get().intValue();
+                        totalPlayerLevel += rpgdifficulty$getPlayerExLevel(playerEntity);
                     }
                 }
                 if (playerCount == 0) {
                     PlayerEntity playerEntity = world.getClosestPlayer(x, y, z, -1.0, false);
                     if (playerEntity != null) {
                         playerCount++;
-                        totalPlayerLevel += DataAttributesAPI.getValue(PlayerEXAttributes.LEVEL, playerEntity).get().intValue();
+                        totalPlayerLevel += rpgdifficulty$getPlayerExLevel(playerEntity);
                     }
                 }
 
@@ -278,14 +285,14 @@ public class PlayerExCompatMixin {
                     if (playerEntity.getWorld().getDimension().equals(mobEntity.getWorld().getDimension())
                             && Math.sqrt(playerEntity.squaredDistanceTo(x, y, z)) <= RpgDifficultyMain.CONFIG.playerRadius) {
                         playerCount++;
-                        totalPlayerLevel += DataAttributesAPI.getValue(PlayerEXAttributes.LEVEL, playerEntity).get().intValue();
+                        totalPlayerLevel += rpgdifficulty$getPlayerExLevel(playerEntity);
                     }
                 }
                 if (playerCount == 0) {
                     PlayerEntity playerEntity = world.getClosestPlayer(x, y, z, -1.0, false);
                     if (playerEntity != null) {
                         playerCount++;
-                        totalPlayerLevel += DataAttributesAPI.getValue(PlayerEXAttributes.LEVEL, playerEntity).get().intValue();
+                        totalPlayerLevel += rpgdifficulty$getPlayerExLevel(playerEntity);
                     }
                 }
 
