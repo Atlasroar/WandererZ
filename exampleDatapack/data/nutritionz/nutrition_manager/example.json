@@ -1,0 +1,17 @@
+{
+  "protein": {
+    "replace": true,
+    "positive": {
+      "minecraft:generic.attack_damage": {
+        "operation": "ADDITION",
+        "value": 2.0
+      }
+    },
+    "negative": {
+      "minecraft:weakness": {
+        "duration": 319,
+        "amplifier": 0
+      }
+    }
+  }
+}

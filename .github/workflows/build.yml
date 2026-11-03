@@ -32,6 +32,8 @@ jobs:
         run: chmod +x ./gradlew
       - name: build
         run: ./gradlew build
+      - name: nutrition integration tests
+        run: ./gradlew runGameTest
       - name: capture build artifacts
         if: ${{ runner.os == 'Linux' && matrix.java == '11' }} # Only upload artifacts built from LTS java on one OS
         uses: actions/upload-artifact@v2

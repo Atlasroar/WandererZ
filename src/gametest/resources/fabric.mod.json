@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "wandererz-test",
+  "version": "1.0.0",
+  "name": "WandererZ integration tests",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-gametest": [
+      "net.nutritionz.NutritionGameTest"
+    ]
+  },
+  "depends": {
+    "wandererz": "*"
+  }
+}

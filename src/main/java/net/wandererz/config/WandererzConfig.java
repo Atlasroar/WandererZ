@@ -248,6 +248,10 @@ public class WandererzConfig implements ConfigData, ConfigSync {
     @ConfigEntry.Gui.RequiresRestart
     @Comment("Enable the merged SpoiledZ food spoilage integration")
     public boolean enableSpoiledZ = true;
+    @ConfigEntry.Category("integrations")
+    @ConfigEntry.Gui.RequiresRestart
+    @Comment("Enable the merged NutritionZ nutrition integration")
+    public boolean enableNutritionZ = true;
 
     @Override
     public void updateConfig(ConfigData data) {

@@ -16,6 +16,7 @@
   "config.wandererz.category.tiered": "Tiered",
   "config.wandererz.category.partyaddon": "Party",
   "config.wandererz.category.spoiledz": "Food Spoilage",
+  "config.wandererz.category.nutritionz": "Nutrition",
 
   "text.autoconfig.wandererz.category.gui_settings": "GUI Settings",
   "text.autoconfig.wandererz.category.default": "Skill Settings",
@@ -29,6 +30,8 @@
   "text.autoconfig.wandererz.option.enableTiered": "Enable Tiered",
   "text.autoconfig.wandererz.option.enablePartyAddon": "Enable PartyAddon",
   "text.autoconfig.wandererz.option.enableSpoiledZ": "Enable SpoiledZ (Food Spoilage)",
+  "text.autoconfig.wandererz.option.enableNutritionZ": "Enable NutritionZ (Nutrition)",
+  "text.autoconfig.WandererZ/wandererz.option.enableNutritionZ": "Enable NutritionZ (Nutrition)",
 
   "text.autoconfig.wandererz.option.useIndependentExp": "Use Independent XP",
   "text.autoconfig.wandererz.option.devMode": "Dev Mode",

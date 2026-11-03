@@ -3,9 +3,10 @@
   "id": "wandererz",
   "version": "${version}",
   "name": "WandererZ",
-  "description": "Adds player levels, now with integrated Jobs, RPG Difficulty, Tiered, Party and food spoilage systems",
+  "description": "Adds player levels, now with integrated Jobs, RPG Difficulty, Tiered, Party, food spoilage and nutrition systems",
   "authors": [
-    "Globox_Z"
+    "Globox_Z",
+    "xR4YM0ND"
   ],
   "contact": {
     "homepage": "https://github.com/Atlasroar/LevelZ",
@@ -22,7 +23,8 @@
       "net.rpgdifficulty.RpgDifficultyMain",
       "draylar.tiered.Tiered",
       "net.partyaddon.PartyAddonMain",
-      "net.spoiledz.SpoiledZMain"
+      "net.spoiledz.SpoiledZMain",
+      "net.nutritionz.NutritionMain"
     ],
     "client": [
       "net.wandererz.WandererzClient",
@@ -30,7 +32,8 @@
       "net.rpgdifficulty.RpgDifficultyClient",
       "draylar.tiered.TieredClient",
       "net.partyaddon.PartyAddonClient",
-      "net.spoiledz.SpoiledZClient"
+      "net.spoiledz.SpoiledZClient",
+      "net.nutritionz.NutritionClient"
     ],
     "modmenu": [
       "net.wandererz.config.ModMenuIntegration"
@@ -51,7 +54,8 @@
     "rpgdifficulty.mixins.json",
     "tiered.mixins.json",
     "partyaddon.mixins.json",
-    "spoiledz.mixins.json"
+    "spoiledz.mixins.json",
+    "nutritionz.mixins.json"
   ],
   "depends": {
     "java": ">=17",
@@ -67,6 +71,9 @@
     "seasons": "*",
     "sereneseasons": "*",
     "glitchcore": "*"
+  },
+  "breaks": {
+    "nutritionz": "*"
   },
   "custom": {
     "waila:plugins": {

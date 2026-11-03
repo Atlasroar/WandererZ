@@ -1,0 +1,29 @@
+{
+    "screen.nutritionz": "Нутриенты",
+
+    "text.autoconfig.WandererZ/nutritionz.title": "NutritionZ Настройки",
+    "text.autoconfig.WandererZ/nutritionz.option.maxNutrition": "Максимум Нутриентов",
+    "text.autoconfig.WandererZ/nutritionz.option.negativeNutrition": "Значение Плохого Питания",
+    "text.autoconfig.WandererZ/nutritionz.option.positiveNutrition": "Значение Хорошего Питание",
+    "text.autoconfig.WandererZ/nutritionz.option.posX": "Позиция GUI по X",
+    "text.autoconfig.WandererZ/nutritionz.option.posY": "Позиция GUI по Y",
+    "text.autoconfig.WandererZ/nutritionz.option.carbohydrateItemId": "ID Предмета для Углеводов",
+    "text.autoconfig.WandererZ/nutritionz.option.proteinItemId": "ID Предмета для Белков",
+    "text.autoconfig.WandererZ/nutritionz.option.fatItemId": "ID Предмета для Жиров",
+    "text.autoconfig.WandererZ/nutritionz.option.vitaminItemId": "ID Предмета для Витаминов",
+    "text.autoconfig.WandererZ/nutritionz.option.mineralItemId": "ID Предмета для Минералов",
+
+    "screen.nutritionz.carbohydrates": "Углеводы",
+    "screen.nutritionz.protein": "Белки",
+    "screen.nutritionz.fat": "Жиры",
+    "screen.nutritionz.vitamins": "Витамины",
+    "screen.nutritionz.minerals": "Минералы",
+    "screen.nutritionz.nutritionValue": "%s/%s",
+
+    "item.nutritionz.nutrients": "§7Нутриенты:",
+    "item.nutritionz.carbohydrates": " %s Углеводы",
+    "item.nutritionz.protein": " %s Белки",
+    "item.nutritionz.fat": " %s Жиры",
+    "item.nutritionz.vitamins": " %s Витамины",
+    "item.nutritionz.minerals": " %s Минералы"
+}

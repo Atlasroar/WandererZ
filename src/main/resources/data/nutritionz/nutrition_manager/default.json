@@ -1,0 +1,119 @@
+{
+    "carbohydrates": {
+        "replace": false,
+        "positive": {
+            "generic.attack_speed": {
+                "operation": "ADDITION",
+                "value": 0.5
+            },
+            "generic.movement_speed": {
+                "operation": "ADDITION",
+                "value": 0.02
+            }
+        },
+        "negative": {
+            "generic.attack_speed": {
+                "operation": "ADDITION",
+                "value": 0.5
+            },
+            "generic.movement_speed": {
+                "operation": "ADDITION",
+                "value": 0.02
+            }
+        }
+    },
+    "protein": {
+        "replace": false,
+        "positive": {
+            "generic.attack_damage": {
+                "operation": "ADDITION",
+                "value": 2.0
+            },
+            "generic.attack_knockback": {
+                "operation": "ADDITION",
+                "value": 1.0
+            }
+        },
+        "negative": {
+            "generic.attack_damage": {
+                "operation": "ADDITION",
+                "value": 2.0
+            },
+            "generic.attack_knockback": {
+                "operation": "ADDITION",
+                "value": 1.0
+            }
+        }
+    },
+    "fat": {
+        "replace": false,
+        "positive": {
+            "generic.armor": {
+                "operation": "ADDITION",
+                "value": 2.0
+            },
+            "generic.knockback_resistance": {
+                "operation": "ADDITION",
+                "value": 0.1
+            }
+            
+        },
+        "negative": {
+            "generic.armor": {
+                "operation": "ADDITION",
+                "value": 2.0
+            },
+            "generic.knockback_resistance": {
+                "operation": "ADDITION",
+                "value": 0.1
+            }
+            
+        }
+    },
+    "vitamins": {
+        "replace": false,
+        "positive": {
+            "generic.max_health": {
+                "operation": "ADDITION",
+                "value": 2.0
+            },
+            "minecraft:regeneration": {
+                "duration": 319,
+                "amplifier": 0
+            }
+        },
+        "negative": {
+            "generic.max_health": {
+                "operation": "ADDITION",
+                "value": 2.0
+            },
+            "minecraft:weakness": {
+                "duration": 319,
+                "amplifier": 0
+            }
+        }
+    },
+    "minerals": {
+        "replace": false,
+        "positive": {
+            "generic.armor_toughness": {
+                "operation": "ADDITION",
+                "value": 1.0
+            },
+            "minecraft:haste": {
+                "duration": 319,
+                "amplifier": 0
+            }
+        },
+        "negative": {
+            "generic.armor_toughness": {
+                "operation": "ADDITION",
+                "value": 1.0
+            },
+            "minecraft:unluck": {
+                "duration": 319,
+                "amplifier": 1
+            }
+        }
+    }
+}
